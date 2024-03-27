@@ -1,0 +1,10 @@
+{
+    "name": "Ramesh",
+    "age": "50",
+    "email": "ramesh@example.com",
+    "grade": "B",
+    "courses": [
+      "python",
+      "selenium"
+    ]
+  }
