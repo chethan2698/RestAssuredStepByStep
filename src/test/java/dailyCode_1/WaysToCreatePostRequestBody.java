@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.json.JSONTokener;
-import org.json.simple.JSONObject;
+import org.json.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.testng.annotations.Test;
@@ -116,11 +116,11 @@ public class WaysToCreatePostRequestBody {
 
 		File f = new File(".\\Body.json");// . represents current project location
 		FileReader fr = new FileReader(f);
+		
+		JSONTokener jt = new JSONTokener(fr);
+		JSONObject jo = new JSONObject(jt); //import org.json.JSONObject;
 
-		JSONParser jsonParser = new JSONParser();
-		Object data = jsonParser.parse(fr);
-
-		given().contentType("application/json").body(data)
+		given().contentType("application/json").body(jo)
 
 				.when().post("http://localhost:3000/students")
 
